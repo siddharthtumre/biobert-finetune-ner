@@ -28,7 +28,6 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 from seqeval.metrics import f1_score, precision_score, recall_score
 from torch import nn
-import wandb
 from transformers import (
     AutoConfig,
     AutoModelForTokenClassification,
@@ -98,8 +97,6 @@ class DataTrainingArguments:
 
 
 def main():
-    # Initailize wandb
-    wandb.init(project="finetune-biobert-jnlpba", entity="siddharthtumre")
     # See all possible arguments in src/transformers/training_args.py
     # or by passing the --help flag to this script.
     # We now keep distinct sets of args, for a cleaner separation of concerns.
